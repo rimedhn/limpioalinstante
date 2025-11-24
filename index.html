@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIMPIO AL INSTANTE - Limpieza Profesional y Control de Plagas</title>
+  <link rel="icon" type="image/jpeg" href="https://github.com/rimedhn/limpioalinstante/blob/main/Logo%20Limpio%20al%20Instante.jpg?raw=true">
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-soft {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(to bottom, rgba(14, 165, 233, 0.7), rgba(6, 182, 212, 0.7));
+            z-index: 1;
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .section-divider {
+            height: 4px;
+            width: 80px;
+            background: linear-gradient(90deg, #0ea5e9, #06b6d4);
+            margin: 0 auto 30px;
+            border-radius: 2px;
+        }
+
+        nav a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: white;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+
+        #hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="w-full"><!-- WhatsApp Floating Button --> <a href="https://wa.me/50497340590" target="_blank" rel="noopener noreferrer" class="whatsapp-float animate-pulse-soft" aria-label="Contactar por WhatsApp">
+   <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+   </svg></a> <!-- Header -->
+  <header class="w-full bg-white shadow-lg sticky top-0 z-50">
+   <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+     <div class="flex items-center gap-4"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Logo%20Limpio%20al%20Instante.jpg?raw=true" alt="Limpio al Instante Logo" class="h-16 w-16 rounded-xl object-cover shadow-md" onerror="this.style.display='none'">
+      <div>
+       <h1 id="business-name" class="text-2xl font-bold" style="background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">LIMPIO AL INSTANTE</h1>
+       <p id="tagline" class="text-sm text-gray-600">Limpieza Profesional y Control de Plagas</p>
+      </div>
+     </div>
+     <nav class="flex flex-wrap gap-6 text-sm font-medium"><a href="#inicio" class="text-gray-700 hover:text-sky-600">Inicio</a> <a href="#servicios" class="text-gray-700 hover:text-sky-600">Servicios</a> <a href="#nosotros" class="text-gray-700 hover:text-sky-600">Nosotros</a> <a href="#galeria" class="text-gray-700 hover:text-sky-600">Galería</a> <a href="#contacto" class="text-gray-700 hover:text-sky-600">Contacto</a>
+     </nav>
+    </div>
+   </div>
+  </header><!-- Hero Section -->
+  <section id="inicio" class="w-full relative overflow-hidden text-white py-48 px-6" style="min-height: 700px;">
+   <video id="hero-video" autoplay muted loop playsinline><source src="https://github.com/rimedhn/limpioalinstante/raw/main/shampuseado%20vehiculo%202.mp4" type="video/mp4">
+   </video>
+   <div class="absolute top-0 left-0 w-full h-full gradient-overlay"></div>
+   <div class="max-w-6xl mx-auto text-center animate-fadeInUp hero-content">
+    <h2 id="hero-title" class="text-5xl font-bold mb-6 drop-shadow-lg">Tu Solución Completa en Limpieza y Fumigación</h2>
+    <p id="hero-subtitle" class="text-xl mb-8 opacity-90 drop-shadow-lg">Más de 10 años de experiencia sirviendo a Tegucigalpa, Comayagüela y alrededores</p>
+    <div class="flex flex-wrap justify-center gap-4"><a href="#contacto" class="bg-white text-sky-600 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105">Solicitar Cotización</a> <a href="https://wa.me/50497340590" target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105">WhatsApp</a>
+    </div>
+   </div>
+  </section><!-- Services Section -->
+  <section id="servicios" class="w-full py-20 px-6 bg-gray-50">
+   <div class="max-w-7xl mx-auto">
+    <h2 id="services-title" class="text-4xl font-bold text-center text-gray-800 mb-4">Nuestros Servicios</h2>
+    <div class="section-divider"></div>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Ofrecemos soluciones profesionales para mantener tus espacios limpios, saludables y libres de plagas</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Service Card 1 -->
+     <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+      <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 mx-auto">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="white" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Limpieza de Muebles</h3>
+      <ul class="text-gray-600 space-y-2 text-sm">
+       <li>✓ Shampuseado de muebles y sofás</li>
+       <li>✓ Colchones y almohadas</li>
+       <li>✓ Sillas y butacas</li>
+       <li>✓ Alfombras y tapetes</li>
+       <li>✓ Interior de vehículos</li>
+       <li>✓ Coches de bebé y peluches</li>
+      </ul>
+     </div><!-- Service Card 2 -->
+     <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+      <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 mx-auto">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="white" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Control de Plagas</h3>
+      <ul class="text-gray-600 space-y-2 text-sm">
+       <li>✓ Control de roedores</li>
+       <li>✓ Fumigación de mosquitos y moscas</li>
+       <li>✓ Eliminación de cucarachas</li>
+       <li>✓ Control de chinches y hormigas</li>
+       <li>✓ Detección y tratamiento de termitas</li>
+       <li>✓ Servicio residencial e industrial</li>
+      </ul>
+     </div><!-- Service Card 3 -->
+     <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+      <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 mx-auto">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="white" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Limpieza General</h3>
+      <ul class="text-gray-600 space-y-2 text-sm">
+       <li>✓ Limpieza de apartamentos</li>
+       <li>✓ Limpieza de vidrios</li>
+       <li>✓ Desinfección de casas</li>
+       <li>✓ Limpieza de cisternas</li>
+       <li>✓ Lavado de motor de vehículo</li>
+       <li>✓ Robineado para vehículos</li>
+      </ul>
+     </div><!-- Service Card 4 -->
+     <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+      <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 mx-auto">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="white" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Programas Preventivos</h3>
+      <ul class="text-gray-600 space-y-2 text-sm">
+       <li>✓ Mantenimiento preventivo</li>
+       <li>✓ Instalación de cebaderos</li>
+       <li>✓ Colocación de trampas</li>
+       <li>✓ Insumos de calidad premium</li>
+       <li>✓ Planes comerciales</li>
+       <li>✓ Seguimiento continuo</li>
+      </ul>
+     </div><!-- Service Card 5 -->
+     <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+      <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 mx-auto">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="white" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Productos de Limpieza</h3>
+      <ul class="text-gray-600 space-y-2 text-sm">
+       <li>✓ Shampoo profesional</li>
+       <li>✓ Limpiadores multiusos</li>
+       <li>✓ Desengrasante para motor</li>
+       <li>✓ Productos especializados</li>
+       <li>✓ Insumos de alta calidad</li>
+       <li>✓ Venta al por mayor y menor</li>
+      </ul>
+     </div><!-- Service Card 6 -->
+     <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+      <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mb-6 mx-auto">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="white" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Servicios Especializados</h3>
+      <ul class="text-gray-600 space-y-2 text-sm">
+       <li>✓ Atención 24/7</li>
+       <li>✓ Emergencias de plagas</li>
+       <li>✓ Cotizaciones gratuitas</li>
+       <li>✓ Personal capacitado</li>
+       <li>✓ Equipos profesionales</li>
+       <li>✓ Garantía de servicio</li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </section><!-- About Section -->
+  <section id="nosotros" class="w-full py-20 px-6 bg-white">
+   <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">¿Por Qué Elegirnos?</h2>
+    <div class="section-divider"></div><!-- Promotional Images -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+     <div class="bg-white rounded-2xl overflow-hidden shadow-xl service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Diles%20adios%20a%20las%20plagas%20para%20siempre.jpeg?raw=true" alt="Diles adiós a las plagas para siempre" class="w-full h-full object-cover" onerror="this.parentElement.style.display='none'">
+     </div>
+     <div class="bg-white rounded-2xl overflow-hidden shadow-xl service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/beneficios%20de%20nuestro%20servicio.jpeg?raw=true" alt="Beneficios de nuestro servicio" class="w-full h-full object-cover" onerror="this.parentElement.style.display='none'">
+     </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+     <div class="text-center animate-fadeInUp">
+      <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6 animate-float"><span class="text-4xl font-bold text-white">10+</span>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-3">Años de Experiencia</h3>
+      <p class="text-gray-600">Más de una década brindando servicios de calidad en Tegucigalpa y alrededores</p>
+     </div>
+     <div class="text-center animate-fadeInUp" style="animation-delay: 0.2s;">
+      <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6 animate-float" style="animation-delay: 0.5s;">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewbox="0 0 24 24" class="w-10 h-10"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-3">Calidad Garantizada</h3>
+      <p class="text-gray-600">Utilizamos productos e insumos de la mejor calidad para resultados excepcionales</p>
+     </div>
+     <div class="text-center animate-fadeInUp" style="animation-delay: 0.4s;">
+      <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6 animate-float" style="animation-delay: 1s;">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewbox="0 0 24 24" class="w-10 h-10"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-3">Personal Capacitado</h3>
+      <p class="text-gray-600">Equipo profesional con amplia experiencia y certificaciones en el área</p>
+     </div>
+    </div>
+    <div class="mt-16 bg-gradient-to-r from-sky-50 to-cyan-50 rounded-2xl p-8 text-center">
+     <h3 class="text-2xl font-bold text-gray-800 mb-4">Atendemos en Toda el Área Metropolitana</h3>
+     <p class="text-lg text-gray-600 mb-6">Tegucigalpa, Comayagüela y alrededores</p>
+     <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-700"><span class="bg-white px-4 py-2 rounded-full shadow">✓ Servicio Residencial</span> <span class="bg-white px-4 py-2 rounded-full shadow">✓ Servicio Comercial</span> <span class="bg-white px-4 py-2 rounded-full shadow">✓ Servicio Industrial</span>
+     </div>
+    </div>
+   </div>
+  </section><!-- Gallery Section -->
+  <section id="galeria" class="w-full py-20 px-6 bg-gray-50">
+   <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Galería de Servicios</h2>
+    <div class="section-divider"></div>
+    <p class="text-center text-gray-600 mb-12">Conoce nuestro trabajo y la calidad de nuestros servicios</p><!-- Before/After Gallery -->
+    <div class="mb-12">
+     <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">Resultados Antes y Después</h3>
+     <div id="gallery-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Alfombra -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Antes%20y%20despues%20alfombra.jpeg?raw=true" alt="Antes y después limpieza de alfombra" class="w-full h-96 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Limpieza de Alfombras</p>
+       </div>
+      </div><!-- Alfombra 2 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/antes%20y%20despues%20alfombras.jpeg?raw=true" alt="Antes y después limpieza de alfombras" class="w-full h-96 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Alfombras Profundas</p>
+       </div>
+      </div><!-- Colchón 1 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Antes%20y%20despues%20colchon.jpeg?raw=true" alt="Antes y después limpieza de colchón" class="w-full h-96 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Limpieza de Colchones</p>
+       </div>
+      </div><!-- Colchón 2 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Antes%20y%20despues%20colchon%202.jpeg?raw=true" alt="Antes y después limpieza de colchón" class="w-full h-96 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Colchones Profundos</p>
+       </div>
+      </div><!-- Muebles 1 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Antes%20y%20despues%20muebles.jpeg?raw=true" alt="Antes y después limpieza de muebles" class="w-full h-96 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Limpieza de Muebles</p>
+       </div>
+      </div><!-- Muebles 2 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Antes%20y%20despues%20muebles2.jpeg?raw=true" alt="Antes y después limpieza de muebles" class="w-full h-96 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Sofás y Muebles</p>
+       </div>
+      </div><!-- Muebles 3 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Antes%20y%20despues%20muebles3.jpeg?raw=true" alt="Antes y después limpieza de muebles" class="w-full h-96 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Muebles de Sala</p>
+       </div>
+      </div><!-- Muebles 4 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Anyes%20y%20despues%20muebles%204.jpeg?raw=true" alt="Antes y después limpieza de muebles" class="w-full h-96 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Sillones</p>
+       </div>
+      </div><!-- Sillas 1 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/ants%20y%20despues%20sillas%202.jpeg?raw=true" alt="Antes y después limpieza de sillas" class="w-full h-96 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Limpieza de Sillas</p>
+       </div>
+      </div><!-- Sillas 2 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/antes%20y%20despues%20sillas%203.jpeg?raw=true" alt="Antes y después limpieza de sillas" class="w-full h-96 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Sillas de Comedor</p>
+       </div>
+      </div><!-- Cama 1 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/antes%20y%20despues%20cama.jpeg?raw=true" alt="Antes y después limpieza de cama" class="w-full h-96 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Limpieza de Camas</p>
+       </div>
+      </div><!-- Cama 2 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/antes%20y%20despues%20cama%202.jpeg?raw=true" alt="Antes y después limpieza de cama" class="w-full h-96 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Cabeceras de Cama</p>
+       </div>
+      </div>
+     </div>
+    </div><!-- Video Gallery -->
+    <div class="mb-12">
+     <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">Nuestros Servicios en Acción</h3>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Limpieza interior vehículo -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card">
+       <video src="https://github.com/rimedhn/limpioalinstante/raw/main/Limpieza%20interior%20vehiculo.mp4" class="w-full h-64 object-cover" autoplay muted loop playsinline onerror="this.parentElement.style.display='none'"></video>
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Limpieza Interior de Vehículos</p>
+       </div>
+      </div><!-- Shampuseado vehiculo -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card">
+       <video src="https://github.com/rimedhn/limpioalinstante/raw/main/Shampuseado%20vehiculo.mp4" class="w-full h-64 object-cover" autoplay muted loop playsinline onerror="this.parentElement.style.display='none'"></video>
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Limpieza Profunda</p>
+       </div>
+      </div><!-- Limpieza de faros -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card">
+       <video src="https://github.com/rimedhn/limpioalinstante/raw/main/limpieza%20de%20faros%20vehiculo.mp4" class="w-full h-64 object-cover" autoplay muted loop playsinline onerror="this.parentElement.style.display='none'"></video>
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Limpieza de Faros y Pulido</p>
+       </div>
+      </div><!-- Limpieza mueble -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card">
+       <video src="https://github.com/rimedhn/limpioalinstante/raw/main/Limpieza%20mueble.mp4" class="w-full h-64 object-cover" autoplay muted loop playsinline onerror="this.parentElement.style.display='none'"></video>
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Limpieza de Muebles</p>
+       </div>
+      </div><!-- Shampuseado mueble 1 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card">
+       <video src="https://github.com/rimedhn/limpioalinstante/raw/main/Shampuseado%20mueble.mp4" class="w-full h-64 object-cover" autoplay muted loop playsinline onerror="this.parentElement.style.display='none'"></video>
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Shampuseado de Muebles</p>
+       </div>
+      </div><!-- Shampuseado mueble 2 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card">
+       <video src="https://github.com/rimedhn/limpioalinstante/raw/main/Shampuseado%20mueble%202.mp4" class="w-full h-64 object-cover" autoplay muted loop playsinline onerror="this.parentElement.style.display='none'"></video>
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Limpieza Profesional</p>
+       </div>
+      </div><!-- Fumigación en cocina -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card">
+       <video src="https://github.com/rimedhn/limpioalinstante/raw/main/Fumigacion%20en%20cocina.mp4" class="w-full h-64 object-cover" autoplay muted loop playsinline onerror="this.parentElement.style.display='none'"></video>
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Fumigación en Cocina</p>
+       </div>
+      </div><!-- Fumigación interior -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card">
+       <video src="https://github.com/rimedhn/limpioalinstante/raw/main/Fumigacion%20interior.mp4" class="w-full h-64 object-cover" autoplay muted loop playsinline onerror="this.parentElement.style.display='none'"></video>
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Fumigación Interior</p>
+       </div>
+      </div><!-- Fumigación exterior -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card">
+       <video src="https://github.com/rimedhn/limpioalinstante/raw/main/Fumigacion%20exterior.mp4" class="w-full h-64 object-cover" autoplay muted loop playsinline onerror="this.parentElement.style.display='none'"></video>
+       <div class="p-4 text-center">
+        <p class="text-gray-700 font-semibold">Fumigación Exterior</p>
+       </div>
+      </div>
+     </div>
+    </div><!-- Process Images -->
+    <div class="mb-12">
+     <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">Nuestro Trabajo Profesional</h3>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Limpieza de muebles -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Limpieza%20de%20muebles.jpeg?raw=true" alt="Limpieza de muebles" class="w-full h-64 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-3 text-center">
+        <p class="text-gray-700 text-sm font-semibold">Limpieza Profunda</p>
+       </div>
+      </div><!-- Limpieza de sillas -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Limpieza%20de%20sillas.jpeg?raw=true" alt="Limpieza de sillas" class="w-full h-64 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-3 text-center">
+        <p class="text-gray-700 text-sm font-semibold">Sillas Impecables</p>
+       </div>
+      </div><!-- Limpieza de alfombra -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Limpieza%20de%20alfombra.jpeg?raw=true" alt="Limpieza de alfombra" class="w-full h-64 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-3 text-center">
+        <p class="text-gray-700 text-sm font-semibold">Alfombras Limpias</p>
+       </div>
+      </div><!-- Limpieza de colchón -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Limpieza%20de%20colchon.jpeg?raw=true" alt="Limpieza de colchón" class="w-full h-64 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-3 text-center">
+        <p class="text-gray-700 text-sm font-semibold">Colchones Sanitizados</p>
+       </div>
+      </div><!-- Shampuseado de vehículo -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Sampuseado%20de%20vehiculo.jpeg?raw=true" alt="Shampuseado de vehículo" class="w-full h-64 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-3 text-center">
+        <p class="text-gray-700 text-sm font-semibold">Vehículos Impecables</p>
+       </div>
+      </div><!-- Limpieza vehículo -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/limpieza%20vehiculo.jpeg?raw=true" alt="Limpieza de vehículo" class="w-full h-64 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-3 text-center">
+        <p class="text-gray-700 text-sm font-semibold">Detalle Automotriz</p>
+       </div>
+      </div><!-- Desengrasante -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Desengrasante%20multiusos.jpeg?raw=true" alt="Desengrasante multiusos" class="w-full h-64 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-3 text-center">
+        <p class="text-gray-700 text-sm font-semibold">Productos de Calidad</p>
+       </div>
+      </div><!-- Eliminación de cucarachas -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg service-card"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Eliminacion%20de%20cucarachas.jpeg?raw=true" alt="Eliminación de cucarachas" class="w-full h-64 object-cover" onerror="this.parentElement.style.display='none'">
+       <div class="p-3 text-center">
+        <p class="text-gray-700 text-sm font-semibold">Control de Plagas</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Contact Section -->
+  <section id="contacto" class="w-full py-20 px-6 bg-white">
+   <div class="max-w-7xl mx-auto">
+    <h2 id="contact-title" class="text-4xl font-bold text-center text-gray-800 mb-4">Contáctanos</h2>
+    <div class="section-divider"></div>
+    <p id="contact-subtitle" class="text-center text-gray-600 mb-12">Estamos listos para atenderte. Solicita tu cotización sin compromiso</p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8"><!-- Contact Form -->
+     <div class="bg-gradient-to-br from-sky-50 to-cyan-50 rounded-2xl p-8 shadow-lg">
+      <form id="contact-form" class="space-y-6">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div><label for="nombre" class="block text-sm font-semibold text-gray-700 mb-2">Nombre Completo</label> <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none transition">
+        </div>
+        <div><label for="telefono" class="block text-sm font-semibold text-gray-700 mb-2">Teléfono</label> <input type="tel" id="telefono" name="telefono" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none transition">
+        </div>
+       </div>
+       <div><label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Correo Electrónico</label> <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none transition">
+       </div>
+       <div><label for="servicio" class="block text-sm font-semibold text-gray-700 mb-2">Servicio de Interés</label> <select id="servicio" name="servicio" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none transition"> <option value="">Seleccione un servicio</option> <option value="Limpieza de Muebles">Limpieza de Muebles</option> <option value="Control de Plagas">Control de Plagas</option> <option value="Limpieza General">Limpieza General</option> <option value="Limpieza de Vehículos">Limpieza de Vehículos</option> <option value="Productos de Limpieza">Productos de Limpieza</option> <option value="Otro">Otro</option> </select>
+       </div>
+       <div><label for="mensaje" class="block text-sm font-semibold text-gray-700 mb-2">Mensaje</label> <textarea id="mensaje" name="mensaje" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none transition resize-none"></textarea>
+       </div><button type="submit" class="w-full gradient-bg text-white py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"> Enviar por WhatsApp </button>
+      </form>
+     </div><!-- Google Map -->
+     <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full min-h-[500px]"><iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d244.52726384426395!2d-87.20551925000001!3d14.101888499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDA2JzA2LjgiTiA4N8KwMTInMTkuOSJX!5e0!3m2!1ses!2shn!4v1234567890123!5m2!1ses!2shn" width="100%" height="100%" style="border:0; min-height: 500px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe>
+     </div>
+    </div><!-- Contact Info -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+     <div class="text-center p-6 bg-gray-50 rounded-xl">
+      <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewbox="0 0 24 24" class="w-6 h-6"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+       </svg>
+      </div>
+      <h4 class="font-bold text-gray-800 mb-2">Teléfonos</h4>
+      <p class="text-gray-600 text-sm">+504 9734-0590</p>
+      <p class="text-gray-600 text-sm">+504 9844-7236</p>
+     </div>
+     <div class="text-center p-6 bg-gray-50 rounded-xl">
+      <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewbox="0 0 24 24" class="w-6 h-6"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+       </svg>
+      </div>
+      <h4 class="font-bold text-gray-800 mb-2">Email</h4>
+      <p class="text-gray-600 text-sm break-all">Limpioalinstante@gmail.com</p>
+     </div>
+     <div class="text-center p-6 bg-gray-50 rounded-xl">
+      <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewbox="0 0 24 24" class="w-6 h-6"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+       </svg>
+      </div>
+      <h4 class="font-bold text-gray-800 mb-2">Ubicación</h4>
+      <p class="text-gray-600 text-sm">Centro Comercial Mercado La Isla, Comayagüela</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Social Media Section -->
+  <section class="w-full py-16 px-6 relative overflow-hidden text-white">
+   <div class="absolute inset-0 z-0"><img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1600&amp;q=80" alt="Social Media Background" class="w-full h-full object-cover" onerror="this.style.display='none'">
+    <div class="absolute inset-0 gradient-overlay"></div>
+   </div>
+   <div class="max-w-4xl mx-auto text-center relative z-10">
+    <h3 class="text-3xl font-bold mb-4 drop-shadow-lg">¡Síguenos en Redes Sociales!</h3>
+    <p class="text-lg mb-8 opacity-90 drop-shadow-lg">Mantente al día con nuestros servicios, promociones y consejos</p>
+    <div id="social-links" class="flex justify-center gap-6 flex-wrap"><!-- Facebook --> <a href="https://www.facebook.com/Limpioalintante" target="_blank" rel="noopener noreferrer" class="social-icon bg-white text-sky-600 w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+      </svg></a> <!-- TikTok --> <a href="https://www.tiktok.com/@limpioalinstante1?_r=1&amp;_t=ZM-91UZI4yP8VU" target="_blank" rel="noopener noreferrer" class="social-icon bg-white text-sky-600 w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewbox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+      </svg></a>
+    </div>
+   </div>
+  </section><!-- Footer -->
+  <footer class="w-full bg-gray-900 text-white py-12 px-6">
+   <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+     <div class="text-center md:text-left"><img src="https://github.com/rimedhn/limpioalinstante/blob/main/Logo%20Limpio%20al%20Instante.jpg?raw=true" alt="Logo" class="h-16 w-16 rounded-xl mx-auto md:mx-0 mb-4 object-cover" onerror="this.style.display='none'">
+      <h4 class="text-xl font-bold mb-2">LIMPIO AL INSTANTE</h4>
+      <p class="text-gray-400 text-sm">Tu mejor opción en limpieza y fumigación</p>
+     </div>
+     <div class="text-center">
+      <h4 class="text-lg font-bold mb-4">Horario</h4>
+      <p class="text-gray-400 text-sm">Lunes a Sábado: 8:00 AM - 6:00 PM</p>
+      <p class="text-gray-400 text-sm">Domingo: Disponible por cita</p>
+      <p class="text-gray-400 text-sm mt-2">Emergencias 24/7</p>
+     </div>
+     <div class="text-center md:text-right">
+      <h4 class="text-lg font-bold mb-4">Enlaces Rápidos</h4>
+      <div class="space-y-2"><a href="#servicios" class="block text-gray-400 hover:text-white transition text-sm">Servicios</a> <a href="#nosotros" class="block text-gray-400 hover:text-white transition text-sm">Nosotros</a> <a href="#contacto" class="block text-gray-400 hover:text-white transition text-sm">Contacto</a>
+      </div>
+     </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8">
+     <p id="footer-text" class="text-center text-gray-400 text-sm mb-4">© 2024 Limpio al Instante. Todos los derechos reservados.</p>
+     <p class="text-center text-gray-500 text-xs">Desarrollado por <a href="https://www.rimeddigital.com" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 transition">Rimed Digital</a> | <a href="mailto:gerencia@rimeddigital.com" class="text-sky-400 hover:text-sky-300 transition">gerencia@rimeddigital.com</a> | <a href="tel:+50493593126" class="text-sky-400 hover:text-sky-300 transition">+504 9359-3126</a></p>
+    </div>
+   </div>
+  </footer>
+  <script>
+        const defaultConfig = {
+            business_name: "LIMPIO AL INSTANTE",
+            tagline: "Limpieza Profesional y Control de Plagas",
+            hero_title: "Tu Solución Completa en Limpieza y Fumigación",
+            hero_subtitle: "Más de 10 años de experiencia sirviendo a Tegucigalpa, Comayagüela y alrededores",
+            services_title: "Nuestros Servicios",
+            contact_title: "Contáctanos",
+            contact_subtitle: "Estamos listos para atenderte. Solicita tu cotización sin compromiso",
+            footer_text: "© 2024 Limpio al Instante. Todos los derechos reservados.",
+            background_color: "#0ea5e9",
+            surface_color: "#ffffff",
+            text_color: "#1f2937",
+            primary_action_color: "#0284c7",
+            secondary_action_color: "#25D366",
+            font_family: "system-ui",
+            font_size: 16
+        };
+
+        async function onConfigChange(config) {
+            const customFont = config.font_family || defaultConfig.font_family;
+            const baseFontStack = 'system-ui, -apple-system, sans-serif';
+            const baseSize = config.font_size || defaultConfig.font_size;
+
+            document.getElementById('business-name').textContent = config.business_name || defaultConfig.business_name;
+            document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+            document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+            document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+            document.getElementById('services-title').textContent = config.services_title || defaultConfig.services_title;
+            document.getElementById('contact-title').textContent = config.contact_title || defaultConfig.contact_title;
+            document.getElementById('contact-subtitle').textContent = config.contact_subtitle || defaultConfig.contact_subtitle;
+            document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
+
+            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+            
+            const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            headings.forEach(heading => {
+                const level = parseInt(heading.tagName.charAt(1));
+                const multiplier = level === 1 ? 2 : level === 2 ? 1.5 : level === 3 ? 1.25 : 1;
+                heading.style.fontSize = `${baseSize * multiplier}px`;
+                heading.style.fontFamily = `${customFont}, ${baseFontStack}`;
+            });
+
+            document.querySelectorAll('p, li, label, input, select, textarea, button').forEach(el => {
+                el.style.fontSize = `${baseSize}px`;
+            });
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities: (config) => ({
+                    recolorables: [
+                        {
+                            get: () => config.background_color || defaultConfig.background_color,
+                            set: (value) => {
+                                config.background_color = value;
+                                window.elementSdk.setConfig({ background_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.surface_color || defaultConfig.surface_color,
+                            set: (value) => {
+                                config.surface_color = value;
+                                window.elementSdk.setConfig({ surface_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.text_color || defaultConfig.text_color,
+                            set: (value) => {
+                                config.text_color = value;
+                                window.elementSdk.setConfig({ text_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+                            set: (value) => {
+                                config.primary_action_color = value;
+                                window.elementSdk.setConfig({ primary_action_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+                            set: (value) => {
+                                config.secondary_action_color = value;
+                                window.elementSdk.setConfig({ secondary_action_color: value });
+                            }
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: {
+                        get: () => config.font_family || defaultConfig.font_family,
+                        set: (value) => {
+                            config.font_family = value;
+                            window.elementSdk.setConfig({ font_family: value });
+                        }
+                    },
+                    fontSizeable: {
+                        get: () => config.font_size || defaultConfig.font_size,
+                        set: (value) => {
+                            config.font_size = value;
+                            window.elementSdk.setConfig({ font_size: value });
+                        }
+                    }
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ["business_name", config.business_name || defaultConfig.business_name],
+                    ["tagline", config.tagline || defaultConfig.tagline],
+                    ["hero_title", config.hero_title || defaultConfig.hero_title],
+                    ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+                    ["services_title", config.services_title || defaultConfig.services_title],
+                    ["contact_title", config.contact_title || defaultConfig.contact_title],
+                    ["contact_subtitle", config.contact_subtitle || defaultConfig.contact_subtitle],
+                    ["footer_text", config.footer_text || defaultConfig.footer_text]
+                ])
+            });
+        }
+
+        // WhatsApp Form Handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+            const servicio = document.getElementById('servicio').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            const whatsappMessage = `¡Hola! Me gustaría solicitar información:%0A%0A` +
+                `*Nombre:* ${nombre}%0A` +
+                `*Teléfono:* ${telefono}%0A` +
+                `*Email:* ${email}%0A` +
+                `*Servicio:* ${servicio}%0A` +
+                `*Mensaje:* ${mensaje}`;
+            
+            window.open(`https://wa.me/50497340590?text=${whatsappMessage}`, '_blank', 'noopener noreferrer');
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a37ecc89251b4fc',t:'MTc2Mzk3NzAxNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
